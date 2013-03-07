@@ -23,4 +23,13 @@ class sublime_text_2 {
     owner   => 'root',
     require => Package['SublimeText2'],
   }
+
+  file { "/Users/pmorley/Library/Application Support/Sublime Text 2/Packages/User/Default (OSX).sublime-keymap":
+    content => template('sublime_text_2/Default (OSX).sublime-keymap.erb'),
+    force   => true,
+    group   => 'wheel',
+    owner   => 'root',
+    require => Package['SublimeText2'],
+  }
+
 }
