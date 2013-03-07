@@ -20,5 +20,6 @@ class sublime_text_2 {
     content => template('sublime_text_2/Preferences.sublime-settings.erb'),
     group   => 'wheel',
     owner   => 'root',
+    require => Package['SublimeText2'],
   }
 }
