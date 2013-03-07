@@ -15,4 +15,10 @@ class sublime_text_2 {
     mode    => '0755',
     require => Package['SublimeText2'],
   }
+
+  file { "Library/Application Support/Sublime Text 2/Packages/User/":
+    content => template('sublime_text_2/Preferences.sublime-settings.erb'),
+    group   => 'wheel',
+    owner   => 'root',
+  }
 }
