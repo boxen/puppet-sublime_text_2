@@ -16,8 +16,9 @@ class sublime_text_2 {
     require => Package['SublimeText2'],
   }
 
-  file { "/Users/pmorley/Library/Application Support/Sublime Text 2/Packages/User/":
+  file { "/Users/pmorley/Library/Application Support/Sublime Text 2/Packages/User/Preferences.sublime-settings":
     content => template('sublime_text_2/Preferences.sublime-settings.erb'),
+    force   => true,
     group   => 'wheel',
     owner   => 'root',
     require => Package['SublimeText2'],
