@@ -16,19 +16,19 @@ class sublime_text_2 {
     require => Package['SublimeText2'],
   }
 
-  file { "/Users/pmorley/Library/Application Support/Sublime Text 2/Packages/User/Preferences.sublime-settings":
+  file { "/Users/${::luser}/Library/Application Support/Sublime Text 2/Packages/User/Preferences.sublime-settings":
     content => template('sublime_text_2/Preferences.sublime-settings.erb'),
     force   => true,
     group   => 'wheel',
-    owner   => 'root',
+    owner   => ${::luser},
     require => Package['SublimeText2'],
   }
 
-  file { "/Users/pmorley/Library/Application Support/Sublime Text 2/Packages/User/Default (OSX).sublime-keymap":
+  file { "/Users/${::luser}/Library/Application Support/Sublime Text 2/Packages/User/Default (OSX).sublime-keymap":
     content => template('sublime_text_2/Default (OSX).sublime-keymap.erb'),
     force   => true,
     group   => 'wheel',
-    owner   => 'root',
+    owner   => ${::luser},
     require => Package['SublimeText2'],
   }
 
