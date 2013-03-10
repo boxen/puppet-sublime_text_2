@@ -20,7 +20,7 @@ class sublime_text_2 {
     content => template('sublime_text_2/Preferences.sublime-settings.erb'),
     force   => true,
     group   => 'wheel',
-    owner   => ${::luser},
+    owner   => $::luser,
     require => Package['SublimeText2'],
   }
 
@@ -28,7 +28,7 @@ class sublime_text_2 {
     content => template('sublime_text_2/Default (OSX).sublime-keymap.erb'),
     force   => true,
     group   => 'wheel',
-    owner   => ${::luser},
+    owner   => $::luser,
     require => Package['SublimeText2'],
   }
 
