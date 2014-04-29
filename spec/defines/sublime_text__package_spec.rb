@@ -1,6 +1,6 @@
 require 'spec_helper'
 
-describe 'sublime_text_2::package' do
+describe "sublime_text::v2::package" do
   let(:title) { 'test' }
   let(:params) { {:source => 'https://github.com/foo/bar'} }
   let(:facts) do
@@ -9,7 +9,7 @@ describe 'sublime_text_2::package' do
       :boxen_home => '/opt/boxen',
     }
   end
-  let(:package_dir) { "/Users/#{facts[:luser]}/Library/Application Support/Sublime Text 2/Packages" }
+  let(:package_dir) { "/Users/#{facts[:luser]}/Library/Application Support/Sublime Text/Packages" }
 
   # FIXME - rspec-puppet should properly stub facts instead of this hack.
   before :each do
@@ -20,7 +20,7 @@ describe 'sublime_text_2::package' do
     end
   end
 
-  it { should include_class('sublime_text_2::config') }
+  it { should include_class('sublime_text::config') }
 
   it do
     should contain_repository("#{package_dir}/#{title}").with({

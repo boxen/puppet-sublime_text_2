@@ -1,6 +1,6 @@
 require 'spec_helper'
 
-describe 'sublime_text_2::config' do
+describe 'sublime_text::v2::config' do
   let(:facts) { {:luser => 'testuser'} }
 
   let(:sublimedir) { "/Users/#{facts[:luser]}/Library/Application Support/Sublime Text 2" }
