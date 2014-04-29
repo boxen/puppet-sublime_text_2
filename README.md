@@ -14,8 +14,8 @@ sublime_text::package { 'Emmet':
 }
 
 # For the latest version of v2
-include sublime_text_2
-sublime_text_2::package { 'Emmet':
+include sublime_text::v2
+sublime_text::v2::package { 'Emmet':
   source => 'sergeche/emmet-sublime'
 }
 ```
