@@ -13,6 +13,10 @@ sublime_text_2::package { 'Emmet':
 }
 ```
 
+### User settings and keybindings
+
+Add your custom settings and keybindings to the template files.
+
 ## Required Puppet Modules
 
 None.
